@@ -10,12 +10,21 @@ class HandballController extends Controller
 {
     /**
      * @Route("/handball", name="handball")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
+        $em=$this->getDoctrine()->getEntityManager();
+
+        $articles = $em->createQueryBuilder()
+            ->select('n')
+            ->from('AppBundle:News','n')
+            ->where("n.type = 'HANDBALL'")
+            ->addOrderBy('n.createdate','DESC')
+            ->getQuery()
+            ->getResult();
         return $this->render('categories/sport/handballView.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'articles' => $articles
         ]);
     }
 }

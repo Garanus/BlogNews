@@ -13,9 +13,18 @@ class SportController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $em=$this->getDoctrine()->getEntityManager();
+
+        $articles = $em->createQueryBuilder()
+            ->select('n')
+            ->from('AppBundle:News','n')
+            ->where("n.category = 'S'")
+            ->addOrderBy('n.createdate','DESC')
+            ->getQuery()
+            ->getResult();
         // replace this example code with whatever you need
         return $this->render('categories/sport/sportview.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'articles' => $articles
         ]);
     }
 }

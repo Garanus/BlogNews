@@ -21,6 +21,7 @@ class FootballNewsController extends Controller
         $articles = $em->createQueryBuilder()
                         ->select('n')
                         ->from('AppBundle:News','n')
+                        ->where("n.type = 'Football'")
                         ->addOrderBy('n.createdate','DESC')
                         ->getQuery()
                         ->getResult();

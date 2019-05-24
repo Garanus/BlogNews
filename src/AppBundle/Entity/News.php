@@ -44,6 +44,15 @@ class News
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+    /**
+     * @ORM\Column(name="author", type="string")
+     */
+    private $author;
+    /**
+     * @ORM\Column(name="category", type="string")
+     */
+    private $category;
+
 
     /**
      * @return int
@@ -131,6 +140,38 @@ class News
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 }
 

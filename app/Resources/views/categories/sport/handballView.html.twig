@@ -1,15 +1,33 @@
 {% extends 'base.html.twig' %}
+{% block title %} Piłka Nożna {% endblock %}
+
     {% block stylesheets %}<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% endblock %}
+
+
 {% block body %}
 
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Handball</h1>
+        {% for article in articles %}
+            <article>
+                <header>
+                    <h2><a href="{{ path('handball',{'id' : article.id}) }}">{{ article.title }}</a> </h2>
+                    <h5>{{ article.createdate | date('l,F j, Y') }}</h5>
+                    <h5>Autor: {{ article.author }}</h5>
+                </header>
+                <img src={{ article.image }} width="175" height="200" />
+                <p>
+                    {{ article.content }}
+                </p>
+            </article>
+        {% else %}
+            <p>Brak Artykulow</p>
+        {% endfor %}
     </div>
 {% endblock %}
 {% block javascripts %}
