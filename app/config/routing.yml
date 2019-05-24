@@ -1,3 +1,6 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+football:
+    path: /football/{id}
+    defaults: { _controller: AppBundle:Football:display }
