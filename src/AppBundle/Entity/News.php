@@ -14,164 +14,72 @@ class News
 
 {
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
-     * @ORM\Column(name="title", type="string")
+     * @ORM\Column(name="title", type="string", length=120, unique=true)
      */
     private $title;
 
     /**
-     * @ORM\Column(name="type", type="string")
+     * @ORM\Column(name="slug", type="string", length=120, unique=true)
      */
-    private $type;
+    private $slug;
 
-    /**
-     * @ORM\Column(name="createdate", type="datetime")
-     */
-    private $createdate;
-
-    /**
-     * @ORM\Column(name="image", type="blob")
-     */
-    private $image;
     /**
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+
     /**
-     * @ORM\Column(name="author", type="string")
+     * @ORM\Column(name="createDate", type="datetime")
      */
-    private $author;
+    private $createDate;
+
     /**
-     * @ORM\Column(name="category", type="string")
+     * @ORM\Column(name="thumbnail", type="string", length=90, nullable=true)
+     */
+    private $thumbnail = null;
+
+    /**
+     * @ORM\ManyToOne(
+     *     targetEntity = "Category",
+     *     inversedBy = "posts"
+     * )
+     *
+     * @ORM\JoinColumn(
+     *     name = "category_id",
+     *     referencedColumnName = "id",
+     *     onDelete = "SET NULL"
+     * )
      */
     private $category;
 
+    /**
+     * @ORM\ManyToMany(
+     *     targetEntity = "Tag",
+     *     inversedBy = "posts"
+     * )
+     *
+     * @ORM\JoinTable(
+     *     name = "blog_posts_tags"
+     * )
+     */
+    private $tags;
 
     /**
-     * @return int
+     * @ORM\Column(name="author", type="string", length=180)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $author;
 
     /**
-     * @return mixed
+     * @ORM\Column(name="publishedDate", type="datetime", nullable=true)
      */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedate()
-    {
-        return $this->createdate;
-    }
-
-    /**
-     * @param mixed $createdate
-     */
-    public function setCreatedate($createdate)
-    {
-        $this->createdate = $createdate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param mixed $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * @param mixed $author
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * @param mixed $category
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-    }
+    private $publishedDate = null;
 }
+
 
