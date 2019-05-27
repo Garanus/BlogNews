@@ -4,19 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/FootballNewsController.php" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3d13378-da39-46c9-b4f2-13f801d38686" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/sport/footballNewsView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/sport/footballNewsView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/sport/footballView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/sport/footballView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/sport/handballView.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/sport/handballView.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/sport/sportview.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/sport/sportview.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FootballNewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FootballNewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/HandballController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/HandballController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/base.css" afterDir="false" />
-    </list>
+    <list default="true" id="e3d13378-da39-46c9-b4f2-13f801d38686" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +18,7 @@
     <session id="233050757">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -423,24 +412,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558702299259</updated>
-      <workItem from="1558702302122" duration="23819000" />
+      <workItem from="1558702302122" duration="23979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23819000" />
+    <option name="totallyTimeSpent" value="23979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49946696" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49946696" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
