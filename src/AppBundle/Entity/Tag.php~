@@ -5,20 +5,20 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Category
+ * Tag
  * @ORM\Entity
- * @ORM\Table(name="category")
+ * @ORM\Table(name="tag")
  */
-class Category extends AbstractTaxonomy
+class Tag extends AbstractTaxonomy
 {
 
     /**
-     * @ORM\OneToMany(
+     * @ORM\ManyToMany(
      *     targetEntity = "News",
-     *     mappedBy = "category"
+     *     mappedBy = "tags"
      * )
      *
      */
     protected $posts;
-
 }
+

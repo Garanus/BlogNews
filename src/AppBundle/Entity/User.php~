@@ -1,0 +1,201 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ */
+class User implements AdvancedUserInterface
+{
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @ORM\Column(name="username", type="string", length = 20, unique = true)
+     */
+    private $username;
+    /**
+     * @ORM\Column(name="email", type="string", length = 120, unique = true)
+     */
+    private $email;
+    /**
+     * @ORM\Column(name="password", type="string", length = 64)
+     */
+    private $password;
+    private $plainPassword;
+    /**
+     * @ORM\Column(name="accountNonExpired", type="boolean")
+     */
+    private $accountNonExpired = true;
+    /**
+     * @ORM\Column(name="accountNonLocked", type="boolean")
+     */
+    private $accountNonLocked = true;
+    /**
+     * @ORM\Column(name="credentialsNonExpired", type="boolean")
+     */
+    private $credentialsNonExpired = true;
+    /**
+     * @ORM\Column(name="enabled", type="boolean")
+     */
+    private $enabled = false;
+    /**
+     * @ORM\Column(name="roles", type="array")
+     */
+    private $roles;
+    /**
+     * @ORM\Column(name="actionToken", type="string", length = 20, nullable = true)
+     */
+    private $actionToken;
+    /**
+     * @ORM\Column(name="registerDate", type="datetime")
+     */
+    private $registerDate;
+    /**
+     * @ORM\Column(name="avatar", type="string", length = 100, nullable = true)
+     */
+    private $avatar;
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+        // TODO: Implement getRoles() method.
+    }
+
+    /**
+     * Returns the password used to authenticate the user.
+     *
+     * This should be the encoded password. On authentication, a plain-text
+     * password will be salted, encoded, and then compared to this value.
+     *
+     * @return string The password
+     */
+    public function getPassword()
+    {
+        return $this->password;
+        // TODO: Implement getPassword() method.
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        return null;
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+        // TODO: Implement getUsername() method.
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        $this->plainPassword = null;
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * Checks whether the user's account has expired.
+     *
+     * Internally, if this method returns false, the authentication system
+     * will throw an AccountExpiredException and prevent login.
+     *
+     * @return bool true if the user's account is non expired, false otherwise
+     *
+     * @see AccountExpiredException
+     */
+    public function isAccountNonExpired()
+    {
+        return $this->accountNonExpired;
+        // TODO: Implement isAccountNonExpired() method.
+    }
+
+    /**
+     * Checks whether the user is locked.
+     *
+     * Internally, if this method returns false, the authentication system
+     * will throw a LockedException and prevent login.
+     *
+     * @return bool true if the user is not locked, false otherwise
+     *
+     * @see LockedException
+     */
+    public function isAccountNonLocked()
+    {
+        return $this->accountNonLocked;
+        // TODO: Implement isAccountNonLocked() method.
+    }
+
+    /**
+     * Checks whether the user's credentials (password) has expired.
+     *
+     * Internally, if this method returns false, the authentication system
+     * will throw a CredentialsExpiredException and prevent login.
+     *
+     * @return bool true if the user's credentials are non expired, false otherwise
+     *
+     * @see CredentialsExpiredException
+     */
+    public function isCredentialsNonExpired()
+    {
+        return $this->credentialsNonExpired;
+        // TODO: Implement isCredentialsNonExpired() method.
+    }
+
+    /**
+     * Checks whether the user is enabled.
+     *
+     * Internally, if this method returns false, the authentication system
+     * will throw a DisabledException and prevent login.
+     *
+     * @return bool true if the user is enabled, false otherwise
+     *
+     * @see DisabledException
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+        // TODO: Implement isEnabled() method.
+    }
+}
+

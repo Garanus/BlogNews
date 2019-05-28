@@ -10,20 +10,13 @@ class FootballController extends Controller
 {
     /**
      * @Route("/football", name="football")
-     * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function displayAction($id)
+    public function indexAction(Request $request)
     {
-        $em=$this->getDoctrine()->getEntityManager();
-
-        $article = $em->getRepository('AppBundle:News')->find($id);
-
-        if(!$article){
-            throw $this->createNotFoundException('Brak odpowiedniego wpisu');
-        }
-        return $this->render('categories/sport/footballView.html.twig', [
-            'article' => $article
+        // replace this example code with whatever you need
+        return $this->render('/categories/sport/voleyballView.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
         ]);
     }
 }

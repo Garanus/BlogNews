@@ -52,23 +52,15 @@
             <h1 class="display-4">Nowości</h1>
         </div>
         <div class="container">
-        {% for article in articles %}
-            <article>
-                <header>
-                    <h2>{{ article.title }}</h2>
-                    <h5>{{ article.createdate | date('l,F j, Y') }}</h5>
-                    <h5>Autor: {{ article.author }}</h5>
-                    {% if article.type == 'Football' %}<a href="/footballnews"><h6>Kategoria: Piłka Nożna </h6></a>
-                    {% elseif article.type == 'Handball' %}<a href="/handball"><h6>Kategoria: Piłka Ręczna </h6></a>
-                    {% elseif article.type == 'Voleyball' %}<a href="/voleyball"><h6>Kategoria: Siatkówka </h6></a>{% endif %}
-
-                </header>
-
-                <img src={{ article.image }} width="175" height="200" />
-            </article>
-        {% else %}
-            <p>Brak Artykulow</p>
-        {% endfor %}
+        {% for news in allposts %}
+            <div class="author">Autor <a href="#">{{ news.author }}</a> </div>
+            <div class="author">Data publikacji <a href="#">{{ news.publishedDate|date('d.m.y, H:m') }}</a> </div>
+            <div class="author">Kategoria <a href="#">{{ news.category.name }}</a> </div>
+            {% for tag in news.tags %}
+                <div class="author"><a href="#">{{ tag.name }}</a> </div>
+            {% endfor %}
+            <div class="author"><a href="#">{{ news.content }}</a> </div>
+            {% endfor %}
         </div>
 
     </div>

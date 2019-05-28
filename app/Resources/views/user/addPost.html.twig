@@ -1,0 +1,41 @@
+{#<div class="container">#}
+
+    {#{% if error %}#}
+        {#<div class="moved">#}
+            {#<div class="alert alert-danger" role="alert" style="text-align: center">#}
+                {#{{ error }}#}
+            {#</div>#}
+        {#</div>#}
+    {#{% elseif success %}#}
+        {#<div class="moved">#}
+            {#<div class="alert alert-success" role="alert" style="text-align: center">#}
+                {#{{ success }}#}
+            {#</div>#}
+        {#</div>#}
+    {#{% endif %}#}
+    {#<div class="modal-content" style="background-color: darkgrey;">#}
+        {#<form action="{{ path('addPost') }}" method="post" class="user">#}
+
+            {#<div class="center">#}
+                {#<input type="password" id="newpassword" name="_newpassword" placeholder="Nowe hasło"/>#}
+            {#</div>#}
+
+            {#<div class="center">#}
+                {#<input type="password" id="repeatpassword" name="_repeatpassword" placeholder="Powtórz hasło"/>#}
+            {#</div>#}
+
+            {#<input type="hidden" name="_target_path" value="/changepassword"/>#}
+            {#<div class="center" style="padding-bottom: 50px;padding-top: 30px;">#}
+                {#<button type="submit" class="btn btn-info">Zmień hasło</button>#}
+            {#</div>#}
+            {#<div class="center" style="padding-bottom: 50px;">#}
+                {#{% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+                    {#<a href="{{ path('userview') }}" class="btn btn-secondary test34">Powrót</a>#}
+                {#{% endif %}#}
+            {#</div>#}
+        {#</form>#}
+    {#</div>#}
+{#</div>#}
+{#<div class="paddingdown">#}
+
+{#</div>#}

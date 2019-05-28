@@ -25,8 +25,16 @@
         <a class="p-2 text-dark" href="/about">O nas</a>
         <a class="p-2 text-dark" href="/contact">Kontakt</a>
     </nav>
-    <a class="btn btn-outline-primary" href="/login">Zaloguj się</a>
+        {% if is_granted('ROLE_USER') %}
+            <a class="btn btn-outline-primary" href="{{ path('logout') }}">Wyloguj się</a>
+            <a class="btn btn-outline-primary" href="/addpost">Dodaj wpis</a>
+        {% else %}
+            <a class="btn btn-outline-primary" href="{{ path('login') }}">Zaloguj się</a>
+            <a class="btn btn-outline-primary" href="/register">Zarejestruj się</a>
+        {% endif %}
+    </a>
 </div>
+
 {% block body %}{% endblock %}
 
 {% block javascripts %}{% endblock %}
